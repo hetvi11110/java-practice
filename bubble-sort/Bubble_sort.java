@@ -1,6 +1,6 @@
 class Bubble_sort{
 
-  public static void bubbleSort(int[] nums) {
+  Bubble_sort(int[] nums) {
 
     int temp = 0;
     int n = nums.length;
@@ -22,7 +22,7 @@ class Bubble_sort{
 
   }
 
-  public static void printArre(int[] nums){
+  static void printArre(int[] nums){
     for (int i : nums) {
       System.out.println(i);
     }
@@ -34,9 +34,9 @@ class Bubble_sort{
         int[] myNum = {3,60,35,2,45,320,5};
         System.out.println("Array before bubble sort:");
         printArre(myNum);
-        bubbleSort(myNum);
+        Bubble_sort obj = new Bubble_sort(myNum);       
         System.out.println("Array after bubble sort:");
-        printArre(myNum);
+        obj.printArre(myNum);
 
       }
 

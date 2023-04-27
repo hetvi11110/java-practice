@@ -36,7 +36,7 @@ class Bubble_sort{
         printArre(myNum);
         Bubble_sort obj = new Bubble_sort(myNum);       
         System.out.println("Array after bubble sort:");
-        obj.printArre(myNum);
+        printArre(myNum);
 
       }
 

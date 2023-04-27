@@ -21,3 +21,6 @@ The <b>constructor</b> name must match the class name, and it cannot have a retu
 Also note that the constructor is called when the object is created.</br>
 All classes have constructors by default: if you do not create a class constructor yourself, Java creates one for you. However, then you are not able to set initial values for object attributes.</br>
 Constructors can also take parameters, which is used to initialize attributes.
+
+In Java, it is also possible to nest classes (a class within a class). The purpose of nested classes is to group classes that belong together, which makes your code more readable and maintainable.</br>
+To access the inner class, create an object of the outer class, and then create an object of the inner class:

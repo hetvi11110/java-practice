@@ -30,13 +30,18 @@ class SLL {
 
     void deleteNode(String ndata){
         Node currentNode = head;
-        while(currentNode.next != null){  
+        Node prevNode = head;
+        while(currentNode != null){  
             if(currentNode.data == ndata) {
-                if(currentNode == head){
-                    
+                if(head.data == ndata){
+                    head = currentNode.next;
+                    break;
+                } else {
+                    prevNode.next = currentNode.next;
+                    break;
                 }
-                break;
-            }else {             
+            }else {     
+                prevNode = currentNode;        
                 currentNode = currentNode.next;
             }
         }
@@ -57,11 +62,12 @@ class SLL {
         obj.firstAdd("Hetvi");
         obj.firstAdd("Patel");
         obj.lastAdd("Ankit");
-        // obj.display();
-        obj.deleteNode("Patel");
-        SLL obj1 = new SLL();
-        obj1.firstAdd("Harry");
-        obj1.deleteNode("Potter");
+        obj.lastAdd("Harry");
+        obj.deleteNode("Harry");
+        obj.display();
+        // SLL obj1 = new SLL();
+        // obj1.firstAdd("Harry");
+        // obj1.deleteNode("Potter");
     }
 
 }

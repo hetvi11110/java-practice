@@ -21,11 +21,15 @@ class SLL {
 
     void lastAdd(String ndata){
         Node newNode = new Node(ndata);
-        Node currentNode = head;
-        while(currentNode.next != null){               
-            currentNode = currentNode.next;
+        if(head != null) {
+            Node currentNode = head;
+            while(currentNode.next != null){               
+                currentNode = currentNode.next;
+            }
+            currentNode.next = newNode;
+        } else {
+            head = newNode;
         }
-        currentNode.next = newNode;
     }
 
     void deleteNode(String ndata){
@@ -59,11 +63,11 @@ class SLL {
 
         System.out.println("Single Linked List");
         SLL obj = new SLL();
-        obj.firstAdd("Hetvi");
-        obj.firstAdd("Patel");
+        // obj.firstAdd("Hetvi");
+        // obj.firstAdd("Patel");
         obj.lastAdd("Ankit");
         obj.lastAdd("Harry");
-        obj.deleteNode("Harry");
+        // obj.deleteNode("Harry");
         obj.display();
         // SLL obj1 = new SLL();
         // obj1.firstAdd("Harry");

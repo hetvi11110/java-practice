@@ -57,9 +57,11 @@ class SLL {
         obj.firstAdd("Hetvi");
         obj.firstAdd("Patel");
         obj.lastAdd("Ankit");
-        obj.display();
+        // obj.display();
         obj.deleteNode("Patel");
-        
+        SLL obj1 = new SLL();
+        obj1.firstAdd("Harry");
+        obj1.deleteNode("Potter");
     }
 
 }

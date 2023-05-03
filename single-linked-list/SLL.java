@@ -13,13 +13,13 @@ class SLL {
    
     Node head = null;
 
-    void firstAdd(String ndata){
+    void addFirst(String ndata){
         Node newNode = new Node(ndata);
         newNode.next = head;
         head = newNode;
     }
 
-    void lastAdd(String ndata){
+    void addLast(String ndata){
         Node newNode = new Node(ndata);
         if(head != null) {
             Node currentNode = head;
@@ -30,6 +30,10 @@ class SLL {
         } else {
             head = newNode;
         }
+    }
+
+    void deleteFirst(){
+        head = head.next;
     }
 
     void deleteNode(String ndata){
@@ -63,10 +67,12 @@ class SLL {
 
         System.out.println("Single Linked List");
         SLL obj = new SLL();
-        // obj.firstAdd("Hetvi");
-        // obj.firstAdd("Patel");
-        obj.lastAdd("Ankit");
-        obj.lastAdd("Harry");
+        obj.addFirst("Hetvi");
+        obj.addFirst("Patel");
+        obj.addLast("Ankit");
+        obj.addLast("Harry");
+        obj.deleteFirst();
+        obj.deleteFirst();
         // obj.deleteNode("Harry");
         obj.display();
         // SLL obj1 = new SLL();

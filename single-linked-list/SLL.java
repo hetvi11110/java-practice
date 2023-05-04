@@ -13,10 +13,19 @@ class SLL {
    
     Node head = null;
 
+    boolean checkEmpty(){
+        if(head == null){
+            System.out.println("Linked List is empty.");
+            return true;
+        }
+        return false;
+    }
+
     void addFirst(String ndata){
         Node newNode = new Node(ndata);
         newNode.next = head;
         head = newNode;
+        System.out.println(ndata+" insert successful on top.");
     }
 
     void addLast(String ndata){
@@ -30,9 +39,14 @@ class SLL {
         } else {
             head = newNode;
         }
+        System.out.println(ndata+" insert successful at the end of the list.");
     }
 
     void addNode(int key, String ndata){
+        if(key < 1){
+            System.out.println("Invalid key value inserted.");
+            return;
+        }
         Node newNode = new Node(ndata);
         boolean insert = false;
         if(key == 1 || head == null ){
@@ -40,19 +54,19 @@ class SLL {
                 newNode.next = head;               
             }
             head = newNode;
-            System.out.println("Insert Sucesfull on top.");
+            System.out.println(ndata+" insert successful on top.");
             insert = true;
         } else {
             Node currentNode = head;
             Node prevNode = head;
             Node temp = null;
             int i = 1;
-            while(currentNode.next != null){
+            while(currentNode != null){
                 if(i == key){
                     temp = prevNode.next;
                     prevNode.next = newNode;
                     newNode.next = temp;
-                    System.out.println("Insert Sucesfull.");
+                    System.out.println(ndata+" insert successful.");
                     insert = true;
                     break;
                 }
@@ -60,73 +74,123 @@ class SLL {
                 currentNode = currentNode.next;
                 i++;
             }
+            if(i == key && insert == false){
+                prevNode.next = newNode;
+                System.out.println(ndata+" insert successful at the end of the list.");
+                insert = true;
+                return;                   
+            }
             if(insert == false) {
-                System.out.println("There are only "+i+" elements exist.");
+                System.out.println("There are only "+(i-1)+" node exist.");
             }
         }
     }
 
     void deleteFirst(){
-        head = head.next;
+        if(checkEmpty() == true) {
+            return;
+        }
+        System.out.println(head.data+" delete successful at the top.");
+        head = head.next;        
     }
 
     void deleteLast(){
+        if(checkEmpty() == true) {
+            return;
+        }
         Node currentNode = head;
         Node prevNode = head;
         while(currentNode != null){ 
             if(currentNode.next == null) {
+                System.out.println(currentNode.data+" delete successful at the end of the list.");
                 prevNode.next = null;
             }
             prevNode = currentNode;        
-            currentNode = currentNode.next;
+            currentNode = currentNode.next;           
         }
     }
 
     void deleteNode(String ndata){
+        if(checkEmpty() == true) {
+            return;
+        }
         Node currentNode = head;
         Node prevNode = head;
+        boolean success = false;
         while(currentNode != null){  
             if(currentNode.data == ndata) {
                 if(head.data == ndata){
                     head = currentNode.next;
-                    break;
+                    System.out.println(ndata +" delete successful.");
+                    success = true;
                 } else {
                     prevNode.next = currentNode.next;
-                    break;
+                    System.out.println(ndata +" delete successful.");
+                    success = true;
                 }
-            }else {     
-                prevNode = currentNode;        
-                currentNode = currentNode.next;
-            }
+            }    
+            prevNode = currentNode;        
+            currentNode = currentNode.next;
         }
+        if(success == false){           
+            System.out.println("Node can't find.");
+        }
+        
     }
 
     void display(){
+        if(checkEmpty() == true) {
+            return;
+        }
         Node currentNode = head;
         while(currentNode != null){
-            System.out.println(currentNode.data);
+            System.out.print(currentNode.data+' ');
             currentNode = currentNode.next;
         }
+        System.out.println(' ');
     }
+
+    void sizeofLL(){
+        int i = 0;
+        Node currentNode = head;
+        while(currentNode != null){
+            i++;
+            currentNode = currentNode.next;
+        }
+        System.out.println("Size of linkedlist is: "+i);
+    }
+   
     
     public static void main(String[] args) {
 
-        System.out.println("Single Linked List");
+        System.out.println("Single Linked List:");
+
         SLL obj = new SLL();
+        obj.sizeofLL();
+        obj.display();
         obj.addFirst("Hetvi");
-        obj.addFirst("Patel");
         obj.addLast("Ankit");
         obj.addLast("Harry");
-        obj.addNode(1,"First");
-        obj.addNode(3,"Third");
-        obj.addNode(10,"Tenth");
-        // obj.deleteFirst();
-        // obj.deleteLast();
-        // obj.deleteNode("Harry");
+        obj.addFirst("Patel");
+        obj.addNode(5,"First");
+        obj.addNode(5,"First");
+        obj.addNode(1,"Hetvi");
+        obj.addNode(1,"Patel");
+        obj.addNode(3,"Ankit");
+        obj.addNode(6,"Ron");
+        obj.addNode(5,"Ron");
+        obj.display();                            
+        obj.deleteFirst();
+        obj.deleteLast();
+        obj.deleteNode("Hetvi");
         obj.display();
-        // SLL obj1 = new SLL();
-        // obj1.firstAdd("Harry");
-        // obj1.deleteNode("Potter");
+        obj.sizeofLL();
+
+        SLL obj1 = new SLL();
+        obj1.addFirst("Harry");
+        obj1.deleteNode("Potter");
+        obj1.display();
+        obj1.sizeofLL();
     }
 
 }

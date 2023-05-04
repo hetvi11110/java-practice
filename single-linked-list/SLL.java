@@ -110,6 +110,35 @@ class SLL {
         }
     }
 
+    void deleteNode(int key){
+        if(checkEmpty() == true) {
+            return;
+        }
+        boolean success = false; 
+        if(key == 1){
+            System.out.println(head.data +" delete successful.");
+            head = head.next;
+            success = true;
+        } else {
+            Node currentNode = head;
+            Node prevNode = head;
+            int i = 1;
+            while(currentNode != null){
+                if(i == key){
+                    System.out.println(currentNode.data +" delete successful.");
+                    prevNode.next = currentNode.next;
+                    success = true;
+                }
+                prevNode = currentNode;        
+                currentNode = currentNode.next;
+                i++;
+            }
+        }
+        if(success == false){           
+            System.out.println("Key does not exist.");
+        } 
+    }
+
     void deleteNode(String ndata){
         if(checkEmpty() == true) {
             return;
@@ -134,8 +163,7 @@ class SLL {
         }
         if(success == false){           
             System.out.println("Node can't find.");
-        }
-        
+        }        
     }
 
     void display(){
@@ -183,6 +211,8 @@ class SLL {
         obj.deleteFirst();
         obj.deleteLast();
         obj.deleteNode("Hetvi");
+        obj.deleteNode(5);
+        obj.deleteNode(6);
         obj.display();
         obj.sizeofLL();
 

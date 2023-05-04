@@ -32,6 +32,40 @@ class SLL {
         }
     }
 
+    void addNode(int key, String ndata){
+        Node newNode = new Node(ndata);
+        boolean insert = false;
+        if(key == 1 || head == null ){
+            if(head != null){
+                newNode.next = head;               
+            }
+            head = newNode;
+            System.out.println("Insert Sucesfull on top.");
+            insert = true;
+        } else {
+            Node currentNode = head;
+            Node prevNode = head;
+            Node temp = null;
+            int i = 1;
+            while(currentNode.next != null){
+                if(i == key){
+                    temp = prevNode.next;
+                    prevNode.next = newNode;
+                    newNode.next = temp;
+                    System.out.println("Insert Sucesfull.");
+                    insert = true;
+                    break;
+                }
+                prevNode = currentNode;               
+                currentNode = currentNode.next;
+                i++;
+            }
+            if(insert == false) {
+                System.out.println("There are only "+i+" elements exist.");
+            }
+        }
+    }
+
     void deleteFirst(){
         head = head.next;
     }
@@ -83,8 +117,11 @@ class SLL {
         obj.addFirst("Patel");
         obj.addLast("Ankit");
         obj.addLast("Harry");
+        obj.addNode(1,"First");
+        obj.addNode(3,"Third");
+        obj.addNode(10,"Tenth");
         // obj.deleteFirst();
-        obj.deleteLast();
+        // obj.deleteLast();
         // obj.deleteNode("Harry");
         obj.display();
         // SLL obj1 = new SLL();

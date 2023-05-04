@@ -22,5 +22,12 @@ Also note that the constructor is called when the object is created.</br>
 All classes have constructors by default: if you do not create a class constructor yourself, Java creates one for you. However, then you are not able to set initial values for object attributes.</br>
 Constructors can also take parameters, which is used to initialize attributes.
 
+<b>Method overloading</b>, multiple methods can have the same name with different parameters</br>
+Multiple methods can have the same name as long as the number and/or type of parameters are different.
+<code>int myMethod(int x)
+float myMethod(float x)
+double myMethod(double x, double y)
+</code>
+
 In Java, it is also possible to nest classes (a class within a class). The purpose of nested classes is to group classes that belong together, which makes your code more readable and maintainable.</br>
 To access the inner class, create an object of the outer class, and then create an object of the inner class:

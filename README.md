@@ -23,7 +23,7 @@ All classes have constructors by default: if you do not create a class construct
 Constructors can also take parameters, which is used to initialize attributes.
 
 <b>Method overloading</b>, multiple methods can have the same name with different parameters</br>
-Multiple methods can have the same name as long as the number and/or type of parameters are different.
+Multiple methods can have the same name as long as the number and/or type of parameters are different.</br>
 <code>int myMethod(int x)
 float myMethod(float x)
 double myMethod(double x, double y)

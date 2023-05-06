@@ -198,40 +198,39 @@ class SLL {
         return i;
     }
 
+    // void getMiddleNode(){
+    //     if(checkEmpty() == true) {
+    //         return;
+    //     }
+    //     int i = 1;
+    //     Node currentNode = head;
+    //     double middle = Math.round(Double.valueOf(getLength())/Double.valueOf(2) + 0.4);
+    //     while(currentNode != null){
+    //         if(i == middle){
+    //             System.out.println("The middle node is : "+currentNode.data);
+    //             break;
+    //         }
+    //         i++;
+    //         currentNode = currentNode.next;
+    //     }
+    // }
+
     void getMiddleNode(){
+
         if(checkEmpty() == true) {
             return;
         }
-        int i = 1;
+
         Node currentNode = head;
-        double middle = Math.round(Double.valueOf(getLength())/Double.valueOf(2) + 0.4);
-        while(currentNode != null){
-            if(i == middle){
-                System.out.println("The middle node is : "+currentNode.data);
-                break;
-            }
-            i++;
+        for(int i = 0; i < getLength()/2; i++) {
             currentNode = currentNode.next;
         }
+        System.out.println("The middle node is : "+currentNode.data);
     }
 
-//     String getMiddleNode(){
-//     Node temp = head;
+    void print_in_reverse(){
 
-//     if(temp != null)
-//     {
-//         int length = getLength();
-//         int i = 0;
-//         String tee = Integer.toString(length/2);
-
-//         for(i = 0; i < length/2; i++)
-//             temp = temp.next;
-
-//         return tee;
-//     }
-
-//     return "-1";
-// }
+    }
    
     
     public static void main(String[] args) {
@@ -239,31 +238,26 @@ class SLL {
         System.out.println("Single Linked List:");
 
         SLL obj = new SLL();
-        // obj.sizeofLL();
-        // obj.display();
-        // obj.addFirst("Hetvi");
-        // obj.addLast("Ankit");
-        obj.addLast("10");
-        obj.addLast("20");
-        obj.addLast("30");
-        obj.addLast("40");
-        obj.addLast("50");
-        // obj.addFirst("Patel");
-        // obj.addNode(5,"First");
-        // obj.addNode(5,"First");
-        // obj.addNode(1,"Hetvi");
-        // obj.addNode(1,"Patel");
-        // obj.addNode(3,"Ankit");
-        // obj.addNode(6,"Ron");
-        // obj.addNode(5,"Ron");
-        // obj.display();                            
-        // obj.deleteFirst();
-        // obj.deleteLast();
-        // obj.deleteNode("Hetvi");
-        // obj.deleteNode(5);
-        // obj.deleteNode(6);
-        // obj.display();
-        // obj.sizeofLL();
+        obj.sizeofLL();
+        obj.display();
+        obj.addFirst("Hetvi");
+        obj.addLast("Ankit");
+        obj.addFirst("Patel");
+        obj.addNode(5,"First");
+        obj.addNode(5,"First");
+        obj.addNode(1,"Hetvi");
+        obj.addNode(1,"Patel");
+        obj.addNode(3,"Ankit");
+        obj.addNode(6,"Ron");
+        obj.addNode(5,"Ron");
+        obj.display();                            
+        obj.deleteFirst();
+        obj.deleteLast();
+        obj.deleteNode("Hetvi");
+        obj.deleteNode(5);
+        obj.deleteNode(6);
+        obj.display();
+        obj.sizeofLL();
         obj.getMiddleNode();
 
         // SLL obj1 = new SLL();

@@ -1,14 +1,13 @@
 class SLL {
 
+    // Define class
     class Node{
-
-        String data;
-        Node next;
+        String data; // data of node
+        Node next; // adress of next node
         Node(String ndata){
             data = ndata;
             next = null;
         }
-
     }
    
     Node head = null;
@@ -230,6 +229,12 @@ class SLL {
 
     void print_in_reverse(){
 
+        if(checkEmpty() == true) {
+            return;
+        }
+
+        
+
     }
    
     
@@ -238,27 +243,29 @@ class SLL {
         System.out.println("Single Linked List:");
 
         SLL obj = new SLL();
-        obj.sizeofLL();
+        
         obj.display();
         obj.addFirst("Hetvi");
         obj.addLast("Ankit");
-        obj.addFirst("Patel");
-        obj.addNode(5,"First");
-        obj.addNode(5,"First");
-        obj.addNode(1,"Hetvi");
-        obj.addNode(1,"Patel");
-        obj.addNode(3,"Ankit");
-        obj.addNode(6,"Ron");
-        obj.addNode(5,"Ron");
-        obj.display();                            
-        obj.deleteFirst();
-        obj.deleteLast();
-        obj.deleteNode("Hetvi");
-        obj.deleteNode(5);
-        obj.deleteNode(6);
         obj.display();
-        obj.sizeofLL();
-        obj.getMiddleNode();
+
+        // obj.addFirst("Patel");
+        // obj.addNode(5,"First");
+        // obj.addNode(5,"First");
+        // obj.addNode(1,"Hetvi");
+        // obj.addNode(1,"Patel");
+        // obj.addNode(3,"Ankit");
+        // obj.addNode(6,"Ron");
+        // obj.addNode(5,"Ron");
+        // obj.display();                            
+        // obj.deleteFirst();
+        // obj.deleteLast();
+        // obj.deleteNode("Hetvi");
+        // obj.deleteNode(5);
+        // obj.deleteNode(6);
+        // obj.display();
+        // obj.sizeofLL();
+        // obj.getMiddleNode();
 
         // SLL obj1 = new SLL();
         // obj1.addFirst("Harry");

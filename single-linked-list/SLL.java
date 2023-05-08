@@ -233,7 +233,18 @@ class SLL {
             return;
         }
 
-        
+        print_in_reverse(head.next);
+        System.out.println(head.data + " <-");
+
+    }
+
+    void print_in_reverse(Node currentNode){
+
+        if (currentNode == null)
+        return;
+
+        print_in_reverse(currentNode.next);
+        System.out.println(currentNode.data + " <-");
 
     }
    
@@ -247,23 +258,23 @@ class SLL {
         obj.display();
         obj.addFirst("Hetvi");
         obj.addLast("Ankit");
-        obj.display();
+        
 
-        // obj.addFirst("Patel");
-        // obj.addNode(5,"First");
-        // obj.addNode(5,"First");
-        // obj.addNode(1,"Hetvi");
-        // obj.addNode(1,"Patel");
-        // obj.addNode(3,"Ankit");
-        // obj.addNode(6,"Ron");
-        // obj.addNode(5,"Ron");
-        // obj.display();                            
-        // obj.deleteFirst();
-        // obj.deleteLast();
-        // obj.deleteNode("Hetvi");
-        // obj.deleteNode(5);
-        // obj.deleteNode(6);
-        // obj.display();
+        obj.addFirst("Patel");
+        obj.addNode(5,"First");
+        obj.addNode(5,"First");
+        obj.addNode(1,"Hetvi");
+        obj.addNode(1,"Patel");
+        obj.addNode(3,"Ankit");
+        obj.addNode(6,"Ron");
+        obj.addNode(5,"Ron");                           
+        obj.deleteFirst();
+        obj.deleteLast();
+        obj.deleteNode("Hetvi");
+        obj.deleteNode(5);
+        obj.deleteNode(6);
+        obj.display();
+        obj.print_in_reverse();
         // obj.sizeofLL();
         // obj.getMiddleNode();
 

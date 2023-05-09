@@ -4,14 +4,15 @@ class SLL {
     class Node{
         String data; // data of node
         Node next; // adress of next node
-        Node(String ndata){
+        Node(String ndata){ // define constructor
             data = ndata;
             next = null;
         }
     }
    
-    Node head = null;
+    Node head = null; // define head of LL
 
+    //check if LL is empty or not
     boolean checkEmpty(){
         if(head == null){
             System.out.println("Linked List is empty.");
@@ -20,6 +21,7 @@ class SLL {
         return false;
     }
 
+    //insert node on top of LL
     void addFirst(String ndata){
         Node newNode = new Node(ndata);
         newNode.next = head;

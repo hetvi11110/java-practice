@@ -29,6 +29,7 @@ class SLL {
         System.out.println(ndata+" insert successful on top.");
     }
 
+    //insert node at the end of LL
     void addLast(String ndata){
         Node newNode = new Node(ndata);
         if(head != null) {
@@ -87,6 +88,7 @@ class SLL {
         }
     }
 
+    //delete node on top of LL
     void deleteFirst(){
         if(checkEmpty() == true) {
             return;
@@ -95,6 +97,7 @@ class SLL {
         head = head.next;        
     }
 
+    //delete node at the end of LL
     void deleteLast(){
         if(checkEmpty() == true) {
             return;

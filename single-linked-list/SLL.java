@@ -23,9 +23,9 @@ class SLL {
 
     //insert node on top of LL
     void addFirst(String ndata){
-        Node newNode = new Node(ndata);
-        newNode.next = head;
-        head = newNode;
+        Node newNode = new Node(ndata); // create object of Node class
+        newNode.next = head; // assign current head value to the new node in next node adress
+        head = newNode; // assign new node object as head value
         System.out.println(ndata+" insert successful on top.");
     }
 

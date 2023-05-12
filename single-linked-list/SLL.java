@@ -31,15 +31,15 @@ class SLL {
 
     //insert node at the end of LL
     void addLast(String ndata){
-        Node newNode = new Node(ndata);
-        if(head != null) {
-            Node currentNode = head;
-            while(currentNode.next != null){               
-                currentNode = currentNode.next;
+        Node newNode = new Node(ndata); // create object of Node class
+        if(head != null) { // check if head is null or not
+            Node currentNode = head; // create new object and assign head value of LL
+            while(currentNode.next != null){                  
+                currentNode = currentNode.next; //travel linked list and get last node
             }
-            currentNode.next = newNode;
+            currentNode.next = newNode; //assign new node adress to last node of ll
         } else {
-            head = newNode;
+            head = newNode; //if head is null then assign new node value to head
         }
         System.out.println(ndata+" insert successful at the end of the list.");
     }

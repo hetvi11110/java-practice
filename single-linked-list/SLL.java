@@ -90,16 +90,16 @@ class SLL {
 
     //delete node on top of LL
     void deleteFirst(){
-        if(checkEmpty() == true) {
+        if(checkEmpty() == true) { //check if linked list is empty or not
             return;
         }
         System.out.println(head.data+" delete successful at the top.");
-        head = head.next;        
+        head = head.next; // assign current head node adress as head       
     }
 
     //delete node at the end of LL
     void deleteLast(){
-        if(checkEmpty() == true) {
+        if(checkEmpty() == true) { //check if linked list is empty or not
             return;
         }
         Node currentNode = head;

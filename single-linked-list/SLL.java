@@ -102,15 +102,15 @@ class SLL {
         if(checkEmpty() == true) { //check if linked list is empty or not
             return;
         }
-        Node currentNode = head;
-        Node prevNode = head;
-        while(currentNode != null){ 
-            if(currentNode.next == null) {
+        Node currentNode = head; // create new object of current node and assign head value of LL
+        Node prevNode = head; // create new object of previous node and assign head value of LL
+        while(currentNode != null){ //travel in the linked list
+            if(currentNode.next == null) { // check if current node is last node or not
                 System.out.println(currentNode.data+" delete successful at the end of the list.");
-                prevNode.next = null;
+                prevNode.next = null; // remove the adress from prev nod of the last node
             }
-            prevNode = currentNode;        
-            currentNode = currentNode.next;           
+            prevNode = currentNode; // assign current node value in previous node       
+            currentNode = currentNode.next;  // assign next node value in current node         
         }
     }
 

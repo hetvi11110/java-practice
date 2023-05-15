@@ -182,12 +182,13 @@ class SLL {
         System.out.println(' ');
     }
 
+    //Check size of linked list
     void sizeofLL(){
-        int i = 0;
-        Node currentNode = head;
-        while(currentNode != null){
-            i++;
-            currentNode = currentNode.next;
+        int i = 0; //define variable and assign 0 value
+        Node currentNode = head; //create object and assign head value
+        while(currentNode != null){ //travel in linked list
+            i++; // increase value of i
+            currentNode = currentNode.next; // assign next node value to current node object
         }
         System.out.println("Size of linkedlist is: "+i);
     }

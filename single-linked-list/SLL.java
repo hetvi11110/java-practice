@@ -233,23 +233,25 @@ class SLL {
         System.out.println("The middle node is : "+currentNode.data);
     }
 
+    //define function for head node
     void print_in_reverse(){
 
-        if(checkEmpty() == true) {
+        if(checkEmpty() == true) { // check is empty or not
             return;
         }
 
-        print_in_reverse(head.next);
+        print_in_reverse(head.next); // set recursion
         System.out.println(head.data + " <-");
 
     }
 
+    //use function overloading for recursion with one argument which pass node
     void print_in_reverse(Node currentNode){
 
-        if (currentNode == null)
+        if (currentNode == null) // check is empty or not
         return;
 
-        print_in_reverse(currentNode.next);
+        print_in_reverse(currentNode.next); // set recursion
         System.out.println(currentNode.data + " <-");
 
     }

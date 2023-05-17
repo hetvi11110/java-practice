@@ -170,6 +170,7 @@ class SLL {
         }        
     }
 
+    //print linked list
     void display(){
         if(checkEmpty() == true) {
             return;
@@ -182,7 +183,7 @@ class SLL {
         System.out.println(' ');
     }
 
-    //Check size of linked list
+    //print size of linked list
     void sizeofLL(){
         int i = 0; //define variable and assign 0 value
         Node currentNode = head; //create object and assign head value
@@ -193,6 +194,7 @@ class SLL {
         System.out.println("Size of linkedlist is: "+i);
     }
 
+    //return lenght of linked list
     int getLength(){
         int i = 0;
         Node currentNode = head;
@@ -220,6 +222,7 @@ class SLL {
     //     }
     // }
 
+    //print middle node of linked list
     void getMiddleNode(){
 
         if(checkEmpty() == true) {

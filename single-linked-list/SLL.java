@@ -114,6 +114,7 @@ class SLL {
         }
     }
 
+    //delete node by key no of linked list
     void deleteNode(int key){
         if(checkEmpty() == true) {
             return;
@@ -143,6 +144,7 @@ class SLL {
         } 
     }
 
+    //using function overloading delete node through value of data
     void deleteNode(String ndata){
         if(checkEmpty() == true) {
             return;
